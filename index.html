@@ -459,6 +459,12 @@
     <label>Pexels API Key</label>
     <input type="password" id="pexelsKey" placeholder="Pexels API Key" />
 
+    <label>Naver Client ID</label>
+    <input type="text" id="naverClientId" placeholder="네이버 Client ID" />
+
+    <label>Naver Client Secret</label>
+    <input type="password" id="naverClientSecret" placeholder="네이버 Client Secret" />
+
     <button class="btn btn-primary" onclick="saveSettings()">💾 저장</button>
     <button class="btn btn-secondary" onclick="testApis()">🔍 API 연결 테스트</button>
     <div class="status-box" id="settingsStatus" style="display:none;"></div>
@@ -583,6 +589,8 @@ function saveSettings() {
     blogId: document.getElementById('blogId').value,
     bloggerKey: document.getElementById('bloggerKey').value,
     pexelsKey: document.getElementById('pexelsKey').value,
+    naverClientId: document.getElementById('naverClientId').value,
+    naverClientSecret: document.getElementById('naverClientSecret').value,
   };
   localStorage.setItem('bloggerSettings', JSON.stringify(settings));
   document.getElementById('saveIndicator').style.display = 'block';
@@ -598,6 +606,8 @@ function loadSettings() {
   if (s.blogId) document.getElementById('blogId').value = s.blogId;
   if (s.bloggerKey) document.getElementById('bloggerKey').value = s.bloggerKey;
   if (s.pexelsKey) document.getElementById('pexelsKey').value = s.pexelsKey;
+  if (s.naverClientId) document.getElementById('naverClientId').value = s.naverClientId;
+  if (s.naverClientSecret) document.getElementById('naverClientSecret').value = s.naverClientSecret;
 }
 
 function getSettings() {
